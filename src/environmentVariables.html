@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="u">Innovation Session - Terminal</h1>
+  <nav>
+    <a href="./terminalCustomization.html">Prev</a>
+    <a href="./home.html">Home</a>
+    <a href="">Next</a>
+  </nav>
+  <h2>Environment Variables</h2>
+  <div>
+    These are global variables that are available to everything. Examples
+    <ul>
+      <li>$SHLVL</li>
+      <li>$PATH</li>
+    </ul>
+    The $PATH variable contains a list of directories separated by colons (':'). These directories are searched through to find commands. 
+    <br>
+    If you try to invoke command 'foo', all the directories in PATH (in that order) are searched for an executable file 'foo' (one with x-bit on). If a file is found, it is executed.
+
+    <h3>How to set environment variables</h3>
+    <code>$export PATH=$PATH:/bin/nvm</code>
+  </div>
+</body>
+<link rel="stylesheet" href="./styles.css">
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="u">Innovation Session - Terminal</h1>
+  <nav>
+    <a href="./changeShells.html">Prev</a>
+    <a href="./home.html">Home</a>
+    <a href="./terminalCustomization.html">Next</a>
+  </nav>
+  <h2>Permissions</h2>
+  <div>
+    How to view a files permissions
+    <pre>
+ls -l /path/to/file
+>>
+-rw-r--r--  1 nicholasmiron  staff  7 Sep 30 22:41 level0.txt
+    </pre>
+    <h3>Reading the output</h3>
+    <span>The first character is the type of object</span>
+    <ul>
+      <li> - (regular file)</li>
+      <li> d (directory)</li>
+      <li> l (symlink)</li>
+      <li> c,p,s,b,D (These have descriptions, but I dont know what they are so I'm skipping them)</li>
+    </ul>
+    <span>The next nine characters can be broxen into three blocks</span>
+    <ul>
+      <li>User/Owner (Defaults to user that created): rw-</li>
+      <li>Group: r--</li>
+      <li>Other: r--</li>
+    </ul>
+    <span>What do these characters mean?</span>
+    <ul>
+      <li>r (Read)</li>
+      <li>w (Write)</li>
+      <li>x (Execute)</li>
+      <li>- (None)</li>
+    </ul>
+    <span>We sometimes see these characters in a number(octal) format</span>
+    <table>
+      <tr>
+        <th scope="col">Value</th>
+        <th scope="col">Permissions</th>
+        <th scope="col">Symbol</th>
+      </tr>
+      <tr><td>0</td><td>None</td><td>---</td></tr>
+      <tr><td>1</td><td>Execute</td><td>--x</td></tr>
+      <tr><td>2</td><td>Write</td><td>-w-</td>
+      <tr><td>3</td><td>Write + Execute</td><td>-wx</td></tr>
+      <tr><td>4</td><td>Read</td><td>r--</td></tr>
+      <tr><td>5</td><td>Read + Execute</td><td>r-x</td></tr>
+      <tr><td>6</td><td>Read + Write</td><td>rw-</td></tr>
+      <tr><td>7</td><td>Read + Write + Execute</td><td>rwx</td></tr>
+    </table>
+  </div>
+
+  <h3>Changing Permissions</h3>
+  <div class="fc">
+    <span>Change owner of a file</span>
+    <code class="pb-10">$sudo chown &ltUSER&gt</code>
+    <span>Change permissions on a file (must be owner)</span>
+    <code class="pb-10">$chmod 700 &ltFILE_NAME&gt</code>
+    <span>Change permissions on a directory</span>
+    <code class="pb-10">$chmod -R 700 &ltDIRECTORY&gt</code>  
+
+    <span>
+      <a href="https://ss64.com/bash/chmod.html">chmod docs</a>
+      <a href="https://ss64.com/bash/chown.html">chown docs</a>
+    </span>
+  </div>
+</body>
+<link rel="stylesheet" href="./styles.css">
+</html>

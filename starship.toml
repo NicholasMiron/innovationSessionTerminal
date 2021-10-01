@@ -1,0 +1,77 @@
+# Configuration file for starship prompts
+# https://starship.rs/
+
+# Default Shell Module Format
+# format = "$all"
+
+# Adds a new line after the prompt. Default: true
+add_newline = true
+
+# Timeout for starship to scan files (in milliseconds). Default: 30
+# scan_timeout = 30
+
+# Timeout for commands executed by starship (in milliseconds). Default: 500
+# command_timeout = 500
+
+# Custom Shell Module Format
+format = """
+$username\
+$hostname\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$package\
+$java\
+$nodejs\
+$python\
+$env_var\
+$custom\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$status\
+$line_break\
+$shell\
+$character"""
+
+
+# Shell Module Overrides
+[username]
+show_always = true
+format = "[$user]($style) "
+
+[hostname]
+format = "[$hostname]($style) | "
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncation_length = 2
+
+[git_branch]
+format = "[$symbol$branch]($style)"
+style = "bold dimmed green"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+
+[package]
+format = "| [$symbol$version]($style) "
+style = "bold dimmed 208"
+
+[nodejs]
+format = "| [$symbol($version)]($style) "
+style = "bold dimmed"
+
+[[battery.display]]
+threshold = 40
+style = "green"
+
+[character]
+error_symbol = "[✖](bold red)"
+
+[shell]
+disabled = false

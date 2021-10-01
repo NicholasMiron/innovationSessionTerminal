@@ -1,0 +1,28 @@
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+
+alias home="cd ~"
+
+# ls after cd
+chpwd() {
+  emulate -L zsh
+  ls -a
+}
+
+alias ls="ls -a" 
+alias rzsh="source ~/.zshrc"
+alias zshconfig='code $HOME/.zshrc'
+alias zshalias="code $HOME/.zsh_aliases"
+
+
+# Git
+alias gc="git commit"
+alias ga="git add"
+alias gaa="git add ."
+alias gst="git status"
+alias gcb="git checkout -b"
+alias gcm="git checkout master"
+alias glog="git log --oneline --decorate --graph"
